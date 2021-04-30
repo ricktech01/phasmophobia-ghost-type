@@ -24,9 +24,14 @@ var ghosts = [new Ghost("Banshee", 1, 2, 3),
 				new Ghost("Sprit", 2, 5, 6),
 				new Ghost("Wraith", 2, 3, 6),
 				new Ghost("Yurei", 3, 4, 5)]
-var evNames ["-", "EMF Level 5", "Fingerprints", 
-"Freezing Temperatures", "Ghost Orb", "Ghost Writing", "Spirit Box";
+var evNames = ["-", "EMF Level 5", "Fingerprints", "Freezing Temperatures", "Ghost Orb", "Ghost Writing", "Spirit Box"];
 function update(){
-	e1 = ev1.value; e2 = ev2.value; e3 = ev3.value;
-	out.innerHTML = ghosts[2].name + " " + evNames[parseInt(e1)] + " " + evNames[parseInt(e2)] + " " + evNames[parseInt(e3)];
+	e1 = parseInt(ev1.value); e2 = parseInt(ev2.value); e3 = parseInt(ev3.value);
+	//out.innerHTML = ghosts[2].name + " " + evNames[parseInt(e1)] + " " + evNames[parseInt(e2)] + " " + evNames[parseInt(e3)];
+	for (var i = 0; i < ghosts.length; i ++){
+		if (ghosts[i].hasEvi(e1) && ghosts[i].hasEvi(e2) && ghosts[i].hasEvi(e3)){
+			alert("meme");
+			out.innerHTML = ghosts[i].name;
+		} 
+	}
 }
