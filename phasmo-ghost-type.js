@@ -54,7 +54,7 @@ function update(){
 
 	if (e1 > 0) {
 		for (var i = 0; i < gl.length; i++){
-			if (gl[i].hasEvi(e1)) {
+			if (!gl[i].hasEvi(e1)) {
 				gl.splice(i, 1); 
 				i--;
 			}
@@ -63,7 +63,7 @@ function update(){
 	}
 	if (e2 > 0) {
 		for (var i = 0; i < gl.length; i++){
-			if (gl[i].hasEvi(e2)) {
+			if (!gl[i].hasEvi(e2)) {
 				gl.splice(i, 1); 
 				i--;
 			}
