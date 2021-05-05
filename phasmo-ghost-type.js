@@ -37,11 +37,11 @@ var ghosts = [new Ghost("Banshee", 1, 2, 3),
 				new Ghost("Demon", 3, 5, 6),
 				new Ghost("Jinn",1, 4, 6),
 				new Ghost("Mare", 3, 4, 6),
-				new Ghost("Oni", 1, 3, 4),
+				new Ghost("Oni", 1, 5, 6),
 				new Ghost("Phantom", 1, 3, 4),
 				new Ghost("Poltergeist", 2, 4, 6),
-				new Ghost("Revenant", 1, 2, 4),
-				new Ghost("Spade", 1, 4, 5),
+				new Ghost("Revenant", 1, 2, 5),
+				new Ghost("Shade", 1, 4, 5),
 				new Ghost("Sprit", 2, 5, 6),
 				new Ghost("Wraith", 2, 3, 6),
 				new Ghost("Yurei", 3, 4, 5)]
@@ -75,7 +75,7 @@ function update(){
 	var posEvi = [];
 
 	for (var i = 0; i < gl.length; i++) {
-		posGhosts += "\t- " +  gl[i].name + "<br>";
+		posGhosts += "\t- " +  gl[i].name + " (" + evNames[gl[i].evidence[0]] + ", " + evNames[gl[i].evidence[1]] + ", " + evNames[gl[i].evidence[2]] +") <br>";
 		for (var j = 0; j < 3; j++){
 			if (gl[i].evidence[j] != e1 && gl[i].evidence[j] != e2){
 				if (!posEvi.includes(gl[i].evidence[j])){
